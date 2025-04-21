@@ -25,8 +25,9 @@ This repository contains the official implementation of the **Latent Cluster Var
 - `global_results_nslkdd.csv` / `global_results_cicids.csv`: Aggregated performance metrics for each generation method.
 
 ### Generations & Results
-- `generations_nsl/`, `generations_cicids/`: Generated datasets from LCVAE, GMVAE, and external models on NSL-KDD and CICIDS2017.
-- `results_nsl/`, `results_cicids/`: Evaluation outputs (figures, scores) for each dataset.
+- `generations_nsl/`: Contains a ZIP archive (`generations_nsl.zip`) that includes all generated datasets (LCVAE, GMVAE, and baselines) for the NSL-KDD dataset.
+- `generations_cicids/`: Empty placeholder folder. The CICIDS2017 generated datasets were too large to include, even in compressed form. See the note below for access.
+- `results_nsl/`, `results_cicids/`: Evaluation outputs (figures, metrics) for each dataset and generation method.
 
 ### Preprocessing & Feature Engineering
 - `Preprocessing.ipynb`: Prepares the datasets (NSL-KDD, CICIDS2017), including label encoding, feature selection, and formatting.
@@ -38,12 +39,22 @@ This repository contains the official implementation of the **Latent Cluster Var
 
 ---
 
-## Reproducibility
+## 📦 Data Availability
 
-All notebooks are designed to run independently with fixed seeds and follow the same experimental protocol for fair comparison. If using this repository for your work, please cite the original paper and our contribution accordingly.
+Due to GitHub's storage and bandwidth limitations, large files have been excluded from version control. Instead:
+
+- The `dataset/` folder contains a ZIP archive with both NSL-KDD and CICIDS2017 preprocessed datasets.
+- The `generations_nsl/` folder includes a ZIP archive containing all synthetic datasets generated from the NSL-KDD experiments.
+- The `generations_cicids/` folder is left empty in the repository. Generated data for CICIDS2017 could not be included due to size constraints (even when compressed). Please use the provided generation scripts to reproduce the data, or contact the authors for access.
 
 ---
 
-## Acknowledgments
+## 🔁 Reproducibility
 
-This work reuses preprocessing, baseline models, and evaluation pipelines from [AdenRajput/Comparative_Analysis](https://github.com/AdenRajput/Comparative_Analysis), and extends it with explicit latent structuring and controllable generation via LCVAE.
+All notebooks are designed to run independently with fixed random seeds and follow a shared experimental protocol for consistent benchmarking across models.
+
+---
+
+## 📝 Acknowledgments
+
+This work reuses preprocessing steps, baseline models, and evaluation metrics from [AdenRajput/Comparative_Analysis](https://github.com/AdenRajput/Comparative_Analysis), and extends them with explicit latent structuring and a controllable generation mechanism via LCVAE.
